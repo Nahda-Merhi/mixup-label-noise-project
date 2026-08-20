@@ -1,0 +1,58 @@
+# Reproducing Mixup and Investigating Its Effectiveness Under Increasing Label Noise
+
+## Project Overview
+
+This project reproduces the Mixup training strategy introduced in the paper:
+
+**Mixup: Beyond Empirical Risk Minimization**  
+Zhang et al., ICLR 2018.
+
+The project investigates whether Mixup improves generalization on CIFAR-10 and how its effectiveness changes when training labels become increasingly noisy.
+
+## Research Question
+
+Can we reproduce the generalization benefit of Mixup on CIFAR-10, and how does its relative effectiveness change as the amount of training-label noise increases?
+
+## Method
+
+We compare two training strategies:
+
+1. Standard training
+2. Mixup training
+
+The experiments use CIFAR-10 and a convolutional neural network.
+
+For the extension, we introduce random label corruption at four levels:
+
+- 0% label noise
+- 10% label noise
+- 20% label noise
+- 30% label noise
+
+The test set remains clean for all experiments.
+
+## Results
+
+| Label Noise | Standard Training | Mixup | Mixup Advantage |
+|---:|---:|---:|---:|
+| 0% | 74.58% | 77.17% | +2.59 pp |
+| 10% | 68.61% | 69.60% | +0.99 pp |
+| 20% | 71.04% | 71.78% | +0.74 pp |
+| 30% | 69.54% | 69.49% | -0.05 pp |
+
+## Main Finding
+
+Mixup improved test accuracy over standard training on clean CIFAR-10 data.
+
+However, the relative advantage of Mixup decreased as training-label noise increased. At 30% label noise, the two methods performed essentially the same in our experiment.
+
+## Repository Contents
+
+- `notebooks/` — experiment notebook
+- `figures/` — experimental visualizations
+- `results/` — numerical results
+- `report/` — final project report
+
+## Paper
+
+Zhang et al., "mixup: Beyond Empirical Risk Minimization", ICLR 2018.
