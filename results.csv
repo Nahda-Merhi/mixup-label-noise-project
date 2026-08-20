@@ -1,0 +1,5 @@
+Label Noise (%),Standard Accuracy (%),Mixup Accuracy (%),Mixup Advantage (pp)
+0,74.58,77.17,2.59
+10,68.61,69.6,0.99
+20,71.04,71.78,0.74
+30,69.54,69.49,-0.05
